@@ -1,0 +1,8 @@
+1. update system > `apt update && apt -y upgrade`
+2. add user, ssh keys and sudo > bootstrap_admin.sh
+3. systemctl restart ssh
+4. install docker
+5. create stack directory structure > directorylayout_create.sh
+6. Run docker to pull postgres, n8nio/n8n and caddy > docker compose up -d
+
+`your code here`
