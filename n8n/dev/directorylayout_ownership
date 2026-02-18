@@ -1,0 +1,2 @@
+sudo chown -R 1000:1000 /opt/client-stack/n8n
+sudo chown -R 999:999 /opt/client-stack/postgres
