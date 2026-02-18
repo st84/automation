@@ -1,7 +1,7 @@
-1. update system > `apt update && apt -y upgrade`
+1. Update system > `apt update && apt -y upgrade`
 2. Install base packages > `apt -y install ca-certificates curl gnupg ufw nano`
-3. add user, ssh keys and sudo > `bootstrap_admin.sh` (make it executable) then `bash bootstrap_admin.sh`
-4. restart ssh> `systemctl restart ssh`
+3. Add user, ssh keys and sudo > `bootstrap_admin.sh` (make it executable) then `bash bootstrap_admin.sh`
+4. Restart ssh> `systemctl restart ssh`
 5. Install Docker Engine & Compose > `dockerinstall.sh`
 6. Verify Docker installed > `docker --version` `docker compose version`
 7. Allow admin to run Docker without sudo > `usermode -aG docker admin`
@@ -11,7 +11,7 @@
 11. FW UFW > `ufwconfig.sh`
 12. Log out root, login admin
 13. Verify Docker works > `docker ps` (no containers will be running, that is ok)
-14. create stack directory structure > `directorylayout_create.sh`
+14. Create stack directory structure > `directorylayout_create.sh`
 15. Set n8n direcotry permissions > `sudo chown -R 1000:1000 /opt/client-stack/n8n`
 16. Create compose.yml > in github
 17. Create Caddyfile > in github
