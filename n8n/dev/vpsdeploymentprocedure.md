@@ -21,7 +21,7 @@
 
 20. Start the stack > `docker compose up -d` and check status `docker compose ps`
 21. Validate TLS and reachability > `docker compose logs -f caddy` (certificate issuance succeeed is what we want to see) then test `https://mydomain
-22. Confirm it is NOT using DQLite > `docker compose logs n8n | tail -n 200` we want to see postgres
+22. Confirm it is NOT using DQLite > `docker compose exec n8n env | egrep 'DB_TYPE|DB_POSTGRES'` we want to see postgres
 23. Verify postgres has n8n tables > `docker exec -it $(docker ps -q --filter "ancestor=postgres:16-alpine") \ psql -U n8n -d n8n -c '\dt'` you want to see multiple tables
 
 What is commited to github vs what is not:
