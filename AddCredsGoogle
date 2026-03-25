@@ -1,0 +1,46 @@
+Part 2 — Google Cloud Console setup (do this once)
+Step 1 — Create a project
+Go to console.cloud.google.com. Click the project dropdown at the top → New Project → name it n8n-automations → Create. Make sure it's selected as your active project before continuing.
+Step 2 — Enable the Gmail API
+Go to APIs & Services → Library → search Gmail API → click it → Enable.
+Step 3 — Configure the OAuth consent screen
+Go to APIs & Services → OAuth consent screen. Instead of going straight to settings, Google now shows a Get Started button — click it. This opens a "Project configuration" wizard with 4 steps:
+App Information:
+
+App name: n8n
+User support email: your Gmail address
+Click Next
+
+Audience:
+
+Select External
+Click Next
+
+Contact Information:
+
+Email addresses: your Gmail address (this is what Google uses to notify you about changes to the project)
+Click Next
+
+Finish:
+
+Review the summary and click Create
+
+Step 4 — Add a test user
+After the wizard completes you'll land on the OAuth consent screen dashboard. In the left sub-navigation click Audience. Scroll down to the Test users section → Add users → enter your Gmail address → Save.
+This is mandatory while your app is in "testing" mode. Without it Google will block the OAuth flow with an access denied error even if everything else is configured correctly.
+Step 5 — Add the Gmail scope
+In the left sub-navigation click Data access → Add or remove scopes. In the filter box search Gmail and check:
+https://www.googleapis.com/auth/gmail.send
+Click Update → Save and continue.
+Step 6 — Create the OAuth client
+In the left sub-navigation click Clients → Create client.
+
+Application type: Web application
+Name: n8n
+Under Authorized redirect URIs click Add URI and enter exactly:
+
+  https://yourdomain.com/rest/oauth2-credential/callback
+
+Click Create
+
+A dialog shows your Client ID and Client Secret. Copy both — you'll paste them into n8n in the next step.
